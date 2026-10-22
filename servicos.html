@@ -1,23 +1,70 @@
-AQUI TEREMOS NOSSOS SERVIÇOS BACANAS (placeholder engraçado haha)
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços</title>
+    <title>Serviços - Aura Barbers</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
     <header>
-        <div clas="caixa"></div>
-        <h1>Aura Barbers</h1>
-        <nav>
+        <a class="logo" href="index.html">Aura Barbers</a>
+        <nav aria-label="Menu principal">
             <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="servicos.html">SERVICOS</a></li>
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="servicos.html" aria-current="page">SERVIÇOS</a></li>
                 <li><a href="contatos.html">CONTATOS</a></li>
             </ul>
         </nav>
+        <div class="listra"></div>
     </header>
+
+    <main id="conteudo">
+        <h1>Serviços</h1>
+        <p class="frase">Escolha o seu e venha nos visitar.</p>
+
+        <div class="servicos">
+            <figure class="servico">
+                <img src="imagens/sonic.jpg" alt="Sonic cortando o cabelo do Shadow com a máquina">
+                <figcaption>
+                    <h2>Corte</h2>
+                    <p>Corte de cabelo na tesoura ou na máquina, do seu jeito.</p>
+                    <span class="preco">R$ 40</span>
+                </figcaption>
+            </figure>
+
+            <figure class="servico">
+                <img src="imagens/barba_maquiavelica.jpg" alt="Careca com barba preta cheia e olhar sério">
+                <figcaption>
+                    <h2>Barba</h2>
+                    <p>Barba aparada e alinhada, com acabamento na navalha.</p>
+                    <span class="preco">R$ 30</span>
+                </figcaption>
+            </figure>
+
+            <figure class="servico">
+                <img src="imagens/eggman_felizissimo.jpg" alt="Barbeiro cortando o cabelo de cliente com bigode">
+                <figcaption>
+                    <h2>Corte + Barba</h2>
+                    <p>O combo completo: cabelo e barba na mesma visita.</p>
+                    <span class="preco">R$ 60</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <table>
+            <caption>Outros serviços</caption>
+            <tr><th scope="row">Sobrancelha</th><td>R$ 15</td></tr>
+            <tr><th scope="row">Luzes</th><td>R$ 80</td></tr>
+            <tr><th scope="row">Pigmentação</th><td>R$ 60</td></tr>
+        </table>
+        <p class="aviso">Pagamento em Pix ou dinheiro.</p>
+    </main>
+
+    <footer>
+        &copy; Copyright @ Luigi e Allan
+    </footer>
 </body>
 </html>

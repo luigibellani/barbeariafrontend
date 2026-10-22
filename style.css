@@ -1,18 +1,229 @@
-h1{
-    color: rgb(166, 0, 255);
-    background-color: aqua;
+/* ==========================================
+   Aura Barbers - estilo do site
+   Cores tiradas da fachada da barbearia
+   ========================================== */
+
+/* Cores em um lugar só: se quiser mudar, muda aqui */
+:root {
+    --preto: #151515;
+    --cinza: #202020;
+    --borda: #3a3a3a;
+    --texto: #f2efe9;
+    --vermelho: #c8102e;
+    --azul: #3b6fd1;
 }
-body{
-    background-image: url("giphy.gif");
-    /*background-color: orange;*/
-    text-align: center;
+
+/* Regras gerais */
+* {
+    box-sizing: border-box; /* o tamanho inclui o padding, fica mais fácil de calcular */
 }
-img{
-    width: 300px;
+
+body {
+    margin: 0;
+    background-color: var(--preto);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    text-align: center; /* tudo alinhado ao meio */
 }
-a{
+
+h1, h2 {
+    font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.1;
+    margin: 0 0 0.5em;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 1.75rem; }
+
+a { color: var(--texto); }
+
+/* Contorno bem visível para quem navega com o teclado (Tab) */
+a:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 3px;
+}
+
+/* Link "pular para o conteúdo" (só aparece com o teclado) */
+.pular {
+    position: absolute;
+    left: -9999px;
+}
+.pular:focus {
+    left: 1rem;
+    top: 1rem;
+    background: var(--texto);
+    color: var(--preto);
+    padding: 0.5rem 1rem;
+}
+
+/* ---------- Cabeçalho e menu ---------- */
+header {
+    padding: 1.5rem 1rem 0;
+}
+
+.logo {
+    font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     text-decoration: none;
 }
-footer{
-    background-color: rgb(4, 233, 241);
+
+nav ul {
+    list-style: none;   /* tira as bolinhas da lista */
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* menu no meio */
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 0.25rem;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    border-bottom-color: var(--vermelho);
+}
+
+
+
+/* ---------- Conteúdo ---------- */
+main {
+    max-width: 1100px;   /* largura máxima do conteúdo */
+    margin: 0 auto;      /* auto dos lados = centralizado */
+    padding: 2.5rem 1rem 3rem;
+}
+
+.frase {
+    max-width: 36rem;
+    margin: 0 auto 2rem;
+}
+
+/* Foto grande da página inicial */
+.foto-grande {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto 2rem;
+    border: 1px solid var(--borda);
+}
+
+/* Endereço da página inicial */
+.endereco {
+    font-style: normal;      /* o navegador deixa <address> em itálico, aqui tiramos */
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+    background-color: var(--cinza);
+    border: 1px solid var(--borda);
+    border-top: 3px solid var(--vermelho);
+}
+
+/* ---------- Página de serviços ---------- */
+.servicos {
+    display: grid;
+    /* cabem quantas colunas de 300px+ couberem na tela; no celular vira 1 coluna */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.servico {
+    margin: 0;
+    background-color: var(--cinza);
+    border: 1px solid var(--borda);
+}
+
+.servico img {
+    display: block;
+    width: 100%;           /* a imagem ocupa o cartão todo = bem maior */
+    aspect-ratio: 1 / 1;   /* as 3 ficam quadradas, com o mesmo tamanho */
+    object-fit: cover;     /* corta o excesso em vez de esticar a imagem */
+    object-position: center 30%; /* mostra mais a parte de cima (rostos) */
+}
+
+.servico figcaption {
+    padding: 1.25rem 1rem 1.5rem;
+}
+
+.servico p {
+    margin: 0 0 0.75rem;
+}
+
+.preco {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--texto);
+    border-top: 3px solid var(--vermelho);
+    display: inline-block;
+    padding-top: 0.25rem;
+}
+
+/* Tabela dos outros serviços */
+table {
+    margin: 1rem auto 0;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 420px;
+}
+caption {
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+}
+th, td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--borda);
+}
+th { text-align: left; font-weight: normal; }
+td { text-align: right; font-weight: bold; }
+
+.aviso {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* ---------- Página de contatos ---------- */
+.contato {
+    max-width: 480px;
+    margin: 2rem auto 0;
+    padding: 1.5rem 1rem;
+    background-color: var(--cinza);
+    border: 1px solid var(--borda);
+}
+.contato p {
+    margin: 0 0 0.25rem;
+}
+.contato .rotulo {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.contato .rotulo:first-child {
+    margin-top: 0;
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+    padding: 1.5rem 1rem;
+    border-top: 1px solid var(--borda);
+    font-size: 0.95rem;
+}
+
+/* ---------- Telas pequenas (celular) ---------- */
+@media (max-width: 600px) {
+    h1 { font-size: 2.25rem; }
+    body { font-size: 1.0625rem; }
 }
