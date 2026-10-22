@@ -1,9 +1,3 @@
-/* ==========================================
-   Aura Barbers - estilo do site
-   Cores tiradas da fachada da barbearia
-   ========================================== */
-
-/* Cores em um lugar só: se quiser mudar, muda aqui */
 :root {
     --preto: #151515;
     --cinza: #202020;
@@ -13,9 +7,8 @@
     --azul: #3b6fd1;
 }
 
-/* Regras gerais */
 * {
-    box-sizing: border-box; /* o tamanho inclui o padding, fica mais fácil de calcular */
+    box-sizing: border-box;
 }
 
 body {
@@ -25,7 +18,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.125rem;
     line-height: 1.6;
-    text-align: center; /* tudo alinhado ao meio */
+    text-align: center;
 }
 
 h1, h2 {
@@ -41,13 +34,11 @@ h2 { font-size: 1.75rem; }
 
 a { color: var(--texto); }
 
-/* Contorno bem visível para quem navega com o teclado (Tab) */
 a:focus-visible {
     outline: 3px solid var(--azul);
     outline-offset: 3px;
 }
 
-/* Link "pular para o conteúdo" (só aparece com o teclado) */
 .pular {
     position: absolute;
     left: -9999px;
@@ -60,7 +51,6 @@ a:focus-visible {
     padding: 0.5rem 1rem;
 }
 
-/* ---------- Cabeçalho e menu ---------- */
 header {
     padding: 1.5rem 1rem 0;
 }
@@ -75,11 +65,11 @@ header {
 }
 
 nav ul {
-    list-style: none;   /* tira as bolinhas da lista */
+    list-style: none;
     margin: 1rem 0 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* menu no meio */
+    justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem 2rem;
 }
@@ -98,12 +88,9 @@ nav a[aria-current="page"] {
     border-bottom-color: var(--vermelho);
 }
 
-
-
-/* ---------- Conteúdo ---------- */
 main {
-    max-width: 1100px;   /* largura máxima do conteúdo */
-    margin: 0 auto;      /* auto dos lados = centralizado */
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 2.5rem 1rem 3rem;
 }
 
@@ -112,7 +99,6 @@ main {
     margin: 0 auto 2rem;
 }
 
-/* Foto grande da página inicial */
 .foto-grande {
     display: block;
     width: 100%;
@@ -122,9 +108,8 @@ main {
     border: 1px solid var(--borda);
 }
 
-/* Endereço da página inicial */
 .endereco {
-    font-style: normal;      /* o navegador deixa <address> em itálico, aqui tiramos */
+    font-style: normal;
     max-width: 480px;
     margin: 0 auto;
     padding: 1.25rem 1rem;
@@ -133,10 +118,9 @@ main {
     border-top: 3px solid var(--vermelho);
 }
 
-/* ---------- Página de serviços ---------- */
 .servicos {
     display: grid;
-    /* cabem quantas colunas de 300px+ couberem na tela; no celular vira 1 coluna */
+
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 2.5rem 0;
@@ -150,10 +134,10 @@ main {
 
 .servico img {
     display: block;
-    width: 100%;           /* a imagem ocupa o cartão todo = bem maior */
-    aspect-ratio: 1 / 1;   /* as 3 ficam quadradas, com o mesmo tamanho */
-    object-fit: cover;     /* corta o excesso em vez de esticar a imagem */
-    object-position: center 30%; /* mostra mais a parte de cima (rostos) */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 30%;
 }
 
 .servico figcaption {
@@ -173,7 +157,6 @@ main {
     padding-top: 0.25rem;
 }
 
-/* Tabela dos outros serviços */
 table {
     margin: 1rem auto 0;
     border-collapse: collapse;
@@ -196,7 +179,6 @@ td { text-align: right; font-weight: bold; }
     margin-top: 1rem;
 }
 
-/* ---------- Página de contatos ---------- */
 .contato {
     max-width: 480px;
     margin: 2rem auto 0;
@@ -215,14 +197,12 @@ td { text-align: right; font-weight: bold; }
     margin-top: 0;
 }
 
-/* ---------- Rodapé ---------- */
 footer {
     padding: 1.5rem 1rem;
     border-top: 1px solid var(--borda);
     font-size: 0.95rem;
 }
 
-/* ---------- Telas pequenas (celular) ---------- */
 @media (max-width: 600px) {
     h1 { font-size: 2.25rem; }
     body { font-size: 1.0625rem; }
